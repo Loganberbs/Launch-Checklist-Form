@@ -9,21 +9,29 @@ window.addEventListener("load", function() {
 
  form.addEventListener("submit", function(event) {          
    if (pilotName.value === ""){
-         alert("The 'Pilot Name' Box is Empty");
+         alert("The 'Pilot Name' is Empty");
          event.preventDefault();
 }
    if (copilotName.value === ""){
-         alert("The 'Co-Pilot Name' Box is Empty");
+         alert("The 'Co-Pilot Name' is Empty");
          event.preventDefault();
 }
    if (fuelLevel.value === ""){
-         alert("The 'Fuel Level' Box is Empty");
+         alert("The 'Fuel Level' is Empty");
          event.preventDefault();
 }
    if (cargoMass.value === ""){
-         alert("The 'Cargo Mass' Box is Empty")
+         alert("The 'Cargo Mass' is Empty");
          event.preventDefault();
-   }
+}  
+   if(fuelLevel.value === NaN){
+         alert("The 'Fuel Level' only accepts numbers");
+         event.preventDefault();
+}
+   if(cargoMass.value === NaN){
+         alert("The 'Cargo Mass' only accepts numbers");
+         event.preventDefault();
+}
       });
 });
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!

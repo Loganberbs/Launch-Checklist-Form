@@ -24,11 +24,11 @@ window.addEventListener("load", function() {
          alert("The 'Cargo Mass' is Empty");
          event.preventDefault();
 }  
-   if(fuelLevel.value === NaN){
+   if(isNaN(fuelLevel.value)){
          alert("The 'Fuel Level' only accepts numbers");
          event.preventDefault();
 }
-   if(cargoMass.value === NaN){
+   if(isNaN(cargoMass.value)){
          alert("The 'Cargo Mass' only accepts numbers");
          event.preventDefault();
 }

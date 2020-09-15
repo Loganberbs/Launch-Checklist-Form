@@ -36,19 +36,19 @@ fetch("https://handlers.education.launchcode.org/static/planets.json").then(func
  
          form.addEventListener("submit", function(event) {          
    if (pilotName.value === ""){
-         alert("The 'Pilot Name' is Empty");
+         alert("The 'Pilot Name' is empty");
          event.preventDefault();
 }
    if (copilotName.value === ""){
-         alert("The 'Co-Pilot Name' is Empty");
+         alert("The 'Co-Pilot Name' is empty");
          event.preventDefault();
 }
    if (fuelLevel.value === ""){
-         alert("The 'Fuel Level' is Empty");
+         alert("The 'Fuel Level' is empty");
          event.preventDefault();
 }
    if (cargoMass.value === ""){
-         alert("The 'Cargo Mass' is Empty");
+         alert("The 'Cargo Mass' is empty");
          event.preventDefault();
 }  
    if(isNaN(fuelLevel.value)){
@@ -71,8 +71,8 @@ if(fuelLevel.value >= 10000 && cargoMass.value <= 10000){
 }
 if(fuelLevel.value < 10000 && cargoMass.value > 10000){
       faultyItems.style.visibility = "visible";
-      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is Ready.';
-      copilotStatus.innerHTML = 'Co-Pilot '+ copilotName.value+' is Ready.';
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+ copilotName.value+' is ready.';
       fuelStatus.innerHTML = 'Shuttle has an INSUFFICIENT ammount of fuel'
       cargoStatus.innerHTML = 'Shuttle Cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
@@ -82,21 +82,21 @@ if(fuelLevel.value < 10000 && cargoMass.value > 10000){
 
 if(fuelLevel.value < 10000){
       faultyItems.style.visibility = "visible";
-      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is Ready.';
-      copilotStatus.innerHTML = 'Co-Pilot '+copilotName.value+' is Ready.';
-      fuelStatus.innerHTML = 'Shuttle has an INSUFFICIENT ammount of fuel'
-      cargoStatus.innerHTML = 'Shuttle Cargo meets safety standards'
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+copilotName.value+' is ready.';
+      fuelStatus.innerHTML = 'Shuttle has an insufficient ammount of fuel'
+      cargoStatus.innerHTML = 'Shuttle cargo meets safety standards'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
       launchStatus.style.color = "red";
       event.preventDefault();
 }
 
-if(cargoMass.value > 10000){
+if(cargoMass.value > 10000 && fuelLevel.value < 10000){
       faultyItems.style.visibility = "visible";
-      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is Ready.';
-      copilotStatus.innerHTML = 'Co-Pilot '+copilotName.value+' is Ready.';
-      fuelStatus.innerHTML = 'Shuttle has a sufficient ammount of fuel'
-      cargoStatus.innerHTML = 'Shuttle Cargo exceeds weight limit'
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+copilotName.value+' is ready.';
+      fuelStatus.innerHTML = 'Shuttle has an insufficient ammount of fuel'
+      cargoStatus.innerHTML = 'Shuttle cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
       launchStatus.style.color = "red";
       event.preventDefault();

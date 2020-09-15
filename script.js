@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
   let pilotStatus = document.getElementById("pilotStatus");
   let copilotStatus = document.getElementById("copilotStatus");
   let fuelStatus = document.getElementById("fuelStatus");
-  let cargoStatus = document.getElementById("launchStatus");
+  let cargoStatus = document.getElementById("cargoStatus");
   /*
 4.) Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.*/
 fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
@@ -69,10 +69,10 @@ if(fuelLevel.value >= 10000 && cargoMass.value <= 10000){
       launchStatus.style.color = "green";
       event.preventDefault();
 }
-if(fuelLevel.value > 10000 && cargoMass.value > 10000){
+if(fuelLevel.value < 10000 && cargoMass.value > 10000){
       faultyItems.style.visibility = "visible";
-      pilotStatus.innerHTML = 'Pilot ${pilotName.value} is Ready.';
-      copilotStatus.innerHTML = 'Co-Pilot ${copilotName.value} is Ready.';
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is Ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+ copilotName.value+' is Ready.';
       fuelStatus.innerHTML = 'Shuttle has an INSUFFICIENT ammount of fuel'
       cargoStatus.innerHTML = 'Shuttle Cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
@@ -82,8 +82,8 @@ if(fuelLevel.value > 10000 && cargoMass.value > 10000){
 
 if(fuelLevel.value < 10000){
       faultyItems.style.visibility = "visible";
-      pilotStatus.innerHTML = 'Pilot ${pilotName.value} is Ready.';
-      copilotStatus.innerHTML = 'Co-Pilot ${copilotName.value} is Ready.';
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is Ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+copilotName.value+' is Ready.';
       fuelStatus.innerHTML = 'Shuttle has an INSUFFICIENT ammount of fuel'
       cargoStatus.innerHTML = 'Shuttle Cargo meets safety standards'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
@@ -93,8 +93,8 @@ if(fuelLevel.value < 10000){
 
 if(cargoMass.value > 10000){
       faultyItems.style.visibility = "visible";
-      pilotStatus.innerHTML = 'Pilot ${pilotName.value} is Ready.';
-      copilotStatus.innerHTML = 'Co-Pilot ${copilotName.value} is Ready.';
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is Ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+copilotName.value+' is Ready.';
       fuelStatus.innerHTML = 'Shuttle has a sufficient ammount of fuel'
       cargoStatus.innerHTML = 'Shuttle Cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'

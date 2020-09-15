@@ -1,4 +1,4 @@
-const input = require('readline-sync');
+
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
   const form = document.querySelector("form");

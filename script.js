@@ -10,6 +10,24 @@ window.addEventListener("load", function() {
   let copilotStatus = document.getElementById("copilotStatus");
   let fuelStatus = document.getElementById("fuelStatus");
   let cargoStatus = document.getElementById("launchStatus");
+  /*
+4.) Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.*/
+fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+      response.json().then(function(json){
+         const missionTarget = document.getElementById("missionTarget");
+         let index = Math.floor(Math.random()*json.length);
+         missionTarget.innerHTML = `
+         <h2>Mission Destination</h2>
+         <ol>
+            <li>Name: ${json[index].name}</li>
+            <li>Diameter: ${json[index].diameter}</li>
+            <li>Star: ${json[index].star}</li>
+            <li>Distance from Earth: ${json[index].distance}</li>
+            <li>Number of Moons: ${json[index].moons}</li>
+         </ol>
+         <img src="${json[index].image}"></img>`
+      })
+   })  
 /*
 1.) Validate the user responses with preventDefault() to ensure the following:
          A.)The user entered something for every field.
@@ -85,20 +103,4 @@ if(Number(cargoMass.value) > 10000){
       });
 });
 
-/*
-4.) Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed.*/
 
-
-
-
-/* This block of code shows how to format the HTML once you fetch some planetary JSON!
-<h2>Mission Destination</h2>
-<ol>
-   <li>Name: ${}</li>
-   <li>Diameter: ${}</li>
-   <li>Star: ${}</li>
-   <li>Distance from Earth: ${}</li>
-   <li>Number of Moons: ${}</li>
-</ol>
-<img src="${}">
-*/

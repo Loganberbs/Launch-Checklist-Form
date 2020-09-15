@@ -1,3 +1,4 @@
+const input = require('readline-sync');
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
   const form = document.querySelector("form");
@@ -62,13 +63,13 @@ fetch("https://handlers.education.launchcode.org/static/planets.json").then(func
 2.) With validation, update a list of what is currently ready or not ready for the shuttle launch.
 3.) Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.*/
  
-if(Number(fuelLevel.value) >= 10000 && Number(cargoMass.value) <= 10000){
+if(fuelLevel.value >= 10000 && cargoMass.value <= 10000){
       faultyItems.style.visibility = "hidden";
       launchStatus.innerHTML = "Shuttle is ready for launch";
       launchStatus.style.color = "green";
       event.preventDefault();
 }
-if(Number(fuelLevel.value) > 10000 && Number(cargoMass.value)>10000){
+if(fuelLevel.value > 10000 && cargoMass.value > 10000){
       faultyItems.style.visibility = "visible";
       pilotStatus.innerHTML = 'Pilot ${pilotName.value} is Ready.';
       copilotStatus.innerHTML = 'Co-Pilot ${copilotName.value} is Ready.';
@@ -79,7 +80,7 @@ if(Number(fuelLevel.value) > 10000 && Number(cargoMass.value)>10000){
       event.preventDefault();
 }
 
-if(Number(fuelLevel.value) < 10000){
+if(fuelLevel.value < 10000){
       faultyItems.style.visibility = "visible";
       pilotStatus.innerHTML = 'Pilot ${pilotName.value} is Ready.';
       copilotStatus.innerHTML = 'Co-Pilot ${copilotName.value} is Ready.';
@@ -90,11 +91,11 @@ if(Number(fuelLevel.value) < 10000){
       event.preventDefault();
 }
 
-if(Number(cargoMass.value) > 10000){
+if(cargoMass.value > 10000){
       faultyItems.style.visibility = "visible";
       pilotStatus.innerHTML = 'Pilot ${pilotName.value} is Ready.';
       copilotStatus.innerHTML = 'Co-Pilot ${copilotName.value} is Ready.';
-      fuelStatus.innerHTML = 'Shuttle has a Sufficient ammount of fuel'
+      fuelStatus.innerHTML = 'Shuttle has a sufficient ammount of fuel'
       cargoStatus.innerHTML = 'Shuttle Cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
       launchStatus.style.color = "red";

@@ -1,6 +1,7 @@
 
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
+
   const form = document.querySelector("form");
   const faultyItems = document.querySelector("#faultyItems")
   let pilotName = document.querySelector("input[name=pilotName]");
@@ -35,7 +36,8 @@ fetch("https://handlers.education.launchcode.org/static/planets.json").then(func
          B.)The user entered text for names and numbers for fuel and cargo levels.*/
  
          form.addEventListener("submit", function(event) {          
-   if (pilotName.value === ""){
+            event.preventDefault();
+            if (pilotName.value === ""){
          alert("The 'Pilot Name' is empty");
          event.preventDefault();
 }

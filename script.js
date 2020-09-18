@@ -67,8 +67,12 @@ fetch("https://handlers.education.launchcode.org/static/planets.json").then(func
 3.) Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.*/
  
 if(fuelLevel.value >= 10000 && cargoMass.value <= 10000){
-      faultyItems.style.visibility = "hidden";
+      faultyItems.style.visibility = "visible";
       launchStatus.innerHTML = "Shuttle is ready for launch";
+      pilotStatus.innerHTML = 'Pilot '+pilotName.value+' is ready.';
+      copilotStatus.innerHTML = 'Co-Pilot '+ copilotName.value+' is ready.';
+      fuelStatus.innerHTML = 'Shuttle has a sufficient ammount of fuel'
+      cargoStatus.innerHTML = 'Shuttle cargo meets safety standards'
       launchStatus.style.color = "green";
       
 }

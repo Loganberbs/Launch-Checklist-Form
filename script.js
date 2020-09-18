@@ -37,29 +37,30 @@ fetch("https://handlers.education.launchcode.org/static/planets.json").then(func
  
          form.addEventListener("submit", function(event) {          
             event.preventDefault();
-            if (pilotName.value === ""){
+           
+   if (pilotName.value === ""){
          alert("The 'Pilot Name' is empty");
-         event.preventDefault();
+         
 }
    if (copilotName.value === ""){
          alert("The 'Co-Pilot Name' is empty");
-         event.preventDefault();
+         
 }
    if (fuelLevel.value === ""){
          alert("The 'Fuel Level' is empty");
-         event.preventDefault();
+         
 }
    if (cargoMass.value === ""){
          alert("The 'Cargo Mass' is empty");
-         event.preventDefault();
+         
 }  
    if(isNaN(fuelLevel.value)){
          alert("The 'Fuel Level' only accepts numbers");
-         event.preventDefault();
+         
 }
    if(isNaN(cargoMass.value)){
          alert("The 'Cargo Mass' only accepts numbers");
-         event.preventDefault();
+         
 }
 /*
 2.) With validation, update a list of what is currently ready or not ready for the shuttle launch.
@@ -69,7 +70,7 @@ if(fuelLevel.value >= 10000 && cargoMass.value <= 10000){
       faultyItems.style.visibility = "hidden";
       launchStatus.innerHTML = "Shuttle is ready for launch";
       launchStatus.style.color = "green";
-      event.preventDefault();
+      
 }
 if(fuelLevel.value < 10000 && cargoMass.value > 10000){
       faultyItems.style.visibility = "visible";
@@ -79,7 +80,7 @@ if(fuelLevel.value < 10000 && cargoMass.value > 10000){
       cargoStatus.innerHTML = 'Shuttle Cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
       launchStatus.style.color = "red";
-      event.preventDefault();
+      
 }
 
 if(fuelLevel.value < 10000){
@@ -90,7 +91,7 @@ if(fuelLevel.value < 10000){
       cargoStatus.innerHTML = 'Shuttle cargo meets safety standards'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
       launchStatus.style.color = "red";
-      event.preventDefault();
+      
 }
 
 if(cargoMass.value > 10000 && fuelLevel.value < 10000){
@@ -101,7 +102,7 @@ if(cargoMass.value > 10000 && fuelLevel.value < 10000){
       cargoStatus.innerHTML = 'Shuttle cargo exceeds weight limit'
       launchStatus.innerHTML = 'Shuttle is NOT ready for launch.'
       launchStatus.style.color = "red";
-      event.preventDefault();
+      
 }
       });
 });
